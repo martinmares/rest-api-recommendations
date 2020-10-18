@@ -1,0 +1,6 @@
+[book]
+authors = ["Martin Mareš"]
+language = "cs"
+multilingual = false
+src = "src"
+title = "Úvod do REST API"
