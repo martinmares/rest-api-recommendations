@@ -4,3 +4,9 @@ language = "cs"
 multilingual = false
 src = "src"
 title = "Úvod do REST API"
+
+# [output.latex]
+# latex    = true   # default = true
+# pdf      = false  # default = false
+# markdown = false  # default = false
+

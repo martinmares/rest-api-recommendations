@@ -1,31 +1,29 @@
 # Vyspělost API
 
-V roce 2008 Leonard Richardson navrhl následující model _vyspělosti_ pro webová rozhraní API.
-
-[Pěkně popsaný zdroj v angličtině](https://martinfowler.com/articles/richardsonMaturityModel.html) od Martina Fowlera.
+V roce 2008 Leonard Richardson navrhl model _vyspělosti_ pro webová rozhraní API ([pěkně popsaný zdroj v angličtině](https://martinfowler.com/articles/richardsonMaturityModel.html) od Martina Fowlera).
 
 Úroveň 3 odpovídá skutečnému rozhraní RESTful API podle definice Fieldinga.
 V praxi hodně publikovaných webových rozhraní API leží někde kolem úrovně 2.
 
-| Level   | Reprezentace | Implementace                                                   |
-|:--------|--------------|:---------------------------------------------------------------|
-| LEVEL 0 | XML          | Jedno URI, jedna metoda (většinou `POST`) - SOAP, XML, RPC     |
-| LEVEL 1 | URI          | Hodně URI, jedna metoda (většinou `POST`)                      |
-| LEVEL 2 | HTTP         | Hodně URI, hodně metod (`GET`, `POST`, `PUT`, `DELETE`) - CRUD |
-| LEVEL 3 | HYPERMEDIA   | LEVEL 2 + Hypermedia (odkazy)                                  |
+| Level   | Jedním slovem | Implementace                                                   |
+|:--------|---------------|:---------------------------------------------------------------|
+| LEVEL 0 | XML           | Jedno URI, jedna metoda (většinou `POST`) - SOAP, XML, RPC     |
+| LEVEL 1 | URI           | Hodně URI, jedna metoda (většinou `POST`)                      |
+| LEVEL 2 | HTTP          | Hodně URI, hodně metod (`GET`, `POST`, `PUT`, `DELETE`) - CRUD |
+| LEVEL 3 | HYPERMEDIA    | LEVEL 2 + Hypermedia (odkazy)                                  |
 
 ## Level 0 - všechno v POST
 
-Je definováno jedno URL, jeden prostředek, který je schopen obsluhovat všechny operace přes POST rozhranní.
+Je definováno jedno URL, jeden prostředek, který je schopen obsluhovat všechny operace přes `POST` rozhranní.
 
 Ukázka, máme jednu službu:
-* appointmentService
+* `/appointmentService`
 
 A dvě operace:
 * openSlotList
 * appointmentRequest
 
-Request pro operaci `openSlotReques`:
+Request pro operaci `openSlotRequest`:
 
 ```http
 POST /appointmentService HTTP/1.1
@@ -73,11 +71,11 @@ HTTP/1.1 200 OK
 
 ## Level 1 - rozdělení na Prostředky (_resources_)
 
-Místo toho, abychom si povídalo s jednou službou, rozdělíme služby na více zdrojů. Každá služba má pak svoje kompetence.
+Místo toho, abychom si povídali s jednou službou, rozdělíme služby na více zdrojů. Každá služba má pak svoje kompetence.
 
 Ukázka, máme dva prostředky (_resources_):
-* /doctors
-* /slots
+* `/doctors`
+* `/slots`
  
 Request na `/doctors` pak vypadá nějak takto:
 
@@ -122,7 +120,7 @@ HTTP/1.1 200 OK
 
 ## Level 2 - metody HTTP protokolu (_verbs - slovesa_)
 
-Místo použití metody `POST` pro všechny operace se použijí přímo metody HTTP protokolu.
+Místo použití metody `POST` pro všechny operace se použijí přímo metody HTTP protokolu (__slovesa__: `GET`,`POST`,`DELETE`...).
 
 Ukázka, pro získání seznamu slotů voláme např. takto:
 
@@ -167,7 +165,7 @@ Location: slots/1234/appointment
 
 ## Level 3 - použití odkazů (_hypermedia controls_)
 
-Ve výstupu (response) jsou použity odkazy na další hypermédia (HATEOAS - Hypertext As The Engine Of Application State).
+Ve výstupu (reprezentaci prostředku) jsou použity odkazy na další hypermédia (HATEOAS - Hypertext As The Engine Of Application State).
 
 Ukázka, např. zavoláme metodu `GET` takto:
 
