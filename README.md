@@ -27,3 +27,12 @@ Mělo by se objevit něco takového:
 2020-10-20 14:01:01 [INFO] (warp::server): listening on http://[::1]:3000
 2020-10-20 14:01:01 [INFO] (mdbook::cmd::watch): Listening for changes...
 ```
+4. A pak už můžete procházet dokumentaci
+
+__Dark theme__
+
+![](images/2020-10-20-14-04-15.png)
+
+__Light theme__
+
+![](images/2020-10-20-14-05-02.png)
