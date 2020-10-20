@@ -29,6 +29,8 @@ Mělo by se objevit něco takového:
 ```
 4. A pak už můžete procházet dokumentaci
 
+url: [http://localhost:3000](http://localhost:3000)
+
 __Dark theme__
 
 ![](images/2020-10-20-14-04-15.png)
