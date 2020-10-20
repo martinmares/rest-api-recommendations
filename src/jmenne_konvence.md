@@ -71,43 +71,16 @@ Použijte konzistentní konvence pojmenování prostředků a formátování URI
 | http://api.example.com/device-management/managed-devices/{id}/scripts      |
 | http://api.example.com/device-management/managed-devices/{id}/scripts/{id} |
 
-* __Nepoužívejte koncové lomítko `/` v URI__
-
-| Příklady                                                         |         |
-| :--                                                              |         |
-| http://api.example.com/device-management/managed-devices         |         |
-| <s>http://api.example.com/device-management/managed-devices/</s> | __NE!__ |
-
 * __Ke zlepšení čitelnosti identifikátorů URI použijte pomlčky `-`__
 
 | Příklady                                                                                      |         |
 | :--                                                                                           |         |
 | http://api.example.com/inventory-management/managed-entities/{id}/install-script-location     |         |
-| <s>http://api.example.com/inventory-management/managedEntities/{id}/installScriptLocation</s> | __NE!__ |
-
-* __Nepoužívejte podtržítka `_`__
-
-Abyste se tomuto zmatku vyhnuli, použijte místo podtržítka `_` pomlčku `-`.
-
-
-| Příklady                                                                                         |         |
-| :--                                                                                              |         |
-| http://api.example.com/inventory-management/managed-entities/{id}/install-script-location        |         |
-| <s>http://api.example.com/inventory_management/managed_entities/{id}/install_script_location</s> | __NE!__ |
 
 * __Používejte `lower-case` slova v URI__
 
-| Příklady                                       |         |
-| :--                                            |         |
-| http://api.example.org/my-folder/my-doc        |         |
-| <s>HTTP://API.EXAMPLE.ORG/my-folder/my-doc</s> |         |
-| <s>http://api.example.org/My-Folder/my-doc</s> | __NE!__ |
+| Příklady                                       |   |
+| :--                                            |   |
+| http://api.example.org/my-folder/my-doc        |   |
+| http://api.example.org/my-folder/my-doc/file/1 |   |
 
-* __Nepoužívejte přípony souborů v URI__
-
-Místo toho použijte `Content-Type` hlavičku HTTP.
-
-| Příklady                                                             |         |
-| :--                                                                  |         |
-| http://api.example.com/device-management/managed-devices             |         |
-| <s>http://api.example.com/device-management/managed-devices.xml </s> | __NE!__ |

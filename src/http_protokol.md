@@ -1,4 +1,4 @@
-# HTTP protokol
+# HTTP metody
 
 HTTP protokol definuje několik metod, které označují typ akce, která má být na prostředcích provedena.
 
